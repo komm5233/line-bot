@@ -43,7 +43,7 @@ def handle_message(event):
         r = 'hi'
     elif msg == '你吃飯沒':
         r = '還沒'
-    elif msg == '你在幹嘛'
+    elif msg == '你在幹嘛':
         r = '在想尼^0^'
     line_bot_api.reply_message(
         event.reply_token,
