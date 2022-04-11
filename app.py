@@ -40,14 +40,14 @@ def handle_message(event):
     msg = event.message.text
     r = '供沙小拉?'
 
-    if msg in ['給我貼圖']:
+    if ['給我貼圖'] in msg:
         sticker_message = StickerSendMessage(
             package_id='1',
             sticker_id='1'
         )
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=r))
+            sticker_message)
 
         return
 
