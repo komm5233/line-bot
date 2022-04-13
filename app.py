@@ -42,17 +42,17 @@ def handle_message(event):
     msg = event.message.text
     r = '供沙小拉?'
     ran_package_id = random.choice([446, 11538])
-    ran_sticker_id_1 = random.randint(1988, 2027)
-    ran_sticker_id_2 = random.randint(51626494, 51626533)
+    # ran_sticker_id_1 = random.randint(1988, 2027)
+    # ran_sticker_id_2 = random.randint(51626494, 51626533)
+    if ran_package_id == '446':
+        ran_sticker_id = str(random.randint(1988, 2027))
+    else:
+        ran_sticker_id = str(random.randint(51626494, 51626533))
     if '給我貼圖' in msg:
         
         sticker_message = StickerSendMessage(
-            # package_id = '446',
-            # sticker_id = str(ran_sticker_id_1)
-            if package_id == '446':
-                sticker_id = str(ran_sticker_id_1)
-            else:
-                sticker_id = str(ran_sticker_id_2)
+            package_id = str(ran_package_id),
+            sticker_id = str(ran_sticker_id)
         )
         line_bot_api.reply_message(
             event.reply_token,
