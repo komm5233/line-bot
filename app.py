@@ -41,9 +41,8 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     r = '供沙小拉?'
-    ran = random.randint(17839, 17878)
     if '給我貼圖' in msg:
-
+        ran = random.randint(17839, 17878)
         sticker_message = StickerSendMessage(
             package_id = '446',
             sticker_id = str'ran'
