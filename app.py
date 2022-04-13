@@ -41,12 +41,17 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     r = '供沙小拉?'
-    ran = random.randint(1988, 2027)
+    ran_package_id = random.randint([446, 11538], 1)
+    ran_sticker_id_1 = random.randint(1988, 2027)
+    ran_sticker_id_2 = random.randint(51626494, 51626533)
     if '給我貼圖' in msg:
         
         sticker_message = StickerSendMessage(
-            package_id = '446',
-            sticker_id = str(ran)
+            package_id = str(ran_package_id),
+            if package_id == '446':
+                sticker_id = str(ran_sticker_id_1)
+            else:
+                sticker_id = str(ran_sticker_id_2)
         )
         line_bot_api.reply_message(
             event.reply_token,
