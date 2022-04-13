@@ -1,3 +1,5 @@
+import random
+
 from flask import Flask, request, abort
 
 from linebot import (
@@ -39,11 +41,12 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     r = '供沙小拉?'
-
+    # random.randint()
     if '給我貼圖' in msg:
+
         sticker_message = StickerSendMessage(
-            package_id='1',
-            sticker_id='1'
+            package_id='446',
+            sticker_id='1988'
         )
         line_bot_api.reply_message(
             event.reply_token,
@@ -55,6 +58,8 @@ def handle_message(event):
         r = 'hi'
     elif msg == '你吃飯沒':
         r = '還沒'
+    elif msg == '你是誰':
+        r = '這裡是群聊'
     elif msg in ['你在幹嘛', '在幹嘛']:
         r = '在想尼^0^'
     elif '快到了' in msg:
