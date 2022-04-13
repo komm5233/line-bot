@@ -1,4 +1,4 @@
-import random
+# import random
 
 from flask import Flask, request, abort
 
@@ -42,10 +42,10 @@ def handle_message(event):
     msg = event.message.text
     r = '供沙小拉?'
     if '給我貼圖' in msg:
-        ran = random.randint(17839, 17878)
+        # ran = random.randint(17839, 17878)
         sticker_message = StickerSendMessage(
             package_id = '446',
-            sticker_id = '17839'
+            sticker_id = '1988'
         )
         line_bot_api.reply_message(
             event.reply_token,
