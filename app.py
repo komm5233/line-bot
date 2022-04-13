@@ -47,12 +47,12 @@ def handle_message(event):
     if '給我貼圖' in msg:
         
         sticker_message = StickerSendMessage(
-            package_id = '446',
-            sticker_id = str(ran_sticker_id_1)
-            # if package_id == '446':
-            #     sticker_id = str(ran_sticker_id_1)
-            # else:
-            #     sticker_id = str(ran_sticker_id_2)
+            # package_id = '446',
+            # sticker_id = str(ran_sticker_id_1)
+            if package_id == '446':
+                sticker_id = str(ran_sticker_id_1)
+            else:
+                sticker_id = str(ran_sticker_id_2)
         )
         line_bot_api.reply_message(
             event.reply_token,
